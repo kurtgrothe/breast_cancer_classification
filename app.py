@@ -21,7 +21,7 @@ def predict():
     Petak_Length = request.form['petal_length']
     Petal_Width = request.form['petal_width']
     Sepal-perimeter_worst = request.form['perimeter_worst']
-    radius_worst  = request.form['radius_worst
+    radius_worst  = request.form['radius_worst]
     concave_points_mean = request.form['concave_points_mean']
     area_worst = request.form['area_worst']
     perimeter_mean = request.form['perimeter_mean']
