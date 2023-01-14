@@ -4,8 +4,8 @@ import pickle
 import joblib
 app = Flask(__name__)
 filename = 'SVM_breast_cancer_pkl.pkl'
-model = pickle.load(open(filename, 'rb'))
-#model = joblib.load(filename)
+#model = pickle.load(open(filename, 'rb'))
+model = joblib.load(filename)
 #model = joblib.load(filename)
 @app.route('/')
 
