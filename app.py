@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import numpy as np
 import pickle
 import joblib
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 filename = 'SVM_breast_cancer_pkl.pkl'
 #model = pickle.load(open(filename, 'rb'))
 model = joblib.load(filename)
