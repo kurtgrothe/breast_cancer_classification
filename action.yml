@@ -89,5 +89,5 @@ outputs:
   status:
     description: "The Success/Failure of the action"
 runs:
-  using: Python
-  main: app.py
+  using: "docker"
+  image: "python:3.9"
