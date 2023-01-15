@@ -21,12 +21,6 @@ def predict():
     concave_points_mean = request.form['concave_points_mean']
     area_worst = request.form['area_worst']
 
-    # perimeter_worst = float(request.form['perimeter_worst'])
-    # radius_worst = float(request.form['radius_worst'])
-    # concave_points_mean = float(request.form['concave_points_mean'])
-    # area_worst = float(request.form['area_worst'])
-
-
     pred = model.predict(np.array([[float(perimeter_worst),float(radius_worst),
                                     float(concave_points_mean), float(area_worst)]]))
     if pred == 0:
@@ -34,9 +28,9 @@ def predict():
     else:
         result = "Cancer Present"
 
-    return render_template('index.html', predict=result)
+    #return render_template('index.html', predict=result)
 
-    #return render_template('index.html', predict=str(pred))
+    return render_template('index.html', predict=str(pred))
 
 
 if __name__ == '__main__':
