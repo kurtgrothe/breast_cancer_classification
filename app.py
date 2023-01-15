@@ -12,6 +12,8 @@ model = joblib.load(filename)
 
 def index():
     return render_template('index.html')
+
+
 @app.route('/predict', methods=['POST'])
 
 
@@ -23,14 +25,16 @@ def predict():
 
     pred = model.predict(np.array([[float(perimeter_worst),float(radius_worst),
                                     float(concave_points_mean), float(area_worst)]]))
+
+    result = "not valid"                                
     if pred == 0:
         result = "No Cancer Found"
     else:
         result = "Cancer Present"
 
-    #return render_template('index.html', predict=result)
+    return render_template('index.html', predict=result)
 
-    return render_template('index.html', predict=str(pred))
+    #return render_template('index.html', predict=str(pred))
 
 
 if __name__ == '__main__':
