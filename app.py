@@ -23,6 +23,7 @@ def predict():
 
     pred = model.predict(np.array([[perimeter_worst,radius_worst,
                                     concave_points_mean, area_worst]]))
+    print(pred)
     if pred < 1:
         print ("No Cancer Found")
     else:
