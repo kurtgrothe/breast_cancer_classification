@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import joblib
 app = Flask(__name__, template_folder='templates', static_folder='static')
-filename = 'SVM_breast_cancer_pkl.pkl'
+filename = 'brst_cncr_lgreg.pkl'
 #model = pickle.load(open(filename, 'rb'))
 model = joblib.load(filename)
 #model = joblib.load(filename)
@@ -20,22 +20,9 @@ def predict():
     radius_worst  = request.form['radius_worst']
     concave_points_mean = request.form['concave_points_mean']
     area_worst = request.form['area_worst']
-    perimeter_mean = request.form['perimeter_mean']
-    area_mean = request.form['area_mean']
-    radius_mean = request.form['radius_mean']
-    area_se = request.form['area_se']
-    concavity_worst = request.form['concavity_worst']
-    radius_se = request.form['radius_se']
-    compactness_worst = request.form['compactness_worst']
-    perimeter_se = request.form['perimeter_se']
-    compactness_mean = request.form['compactness_mean']
 
-
-
-    pred = model.predict(np.array([[perimeter_worst,radius_worst,concave_points_mean,
-                                    area_worst,perimeter_mean,area_mean,radius_mean,area_se,
-                                    concavity_worst, radius_se, compactness_worst,perimeter_se,
-                                    compactness_mean ]]))
+    pred = model.predict(np.array([[perimeter_worst,radius_worst,
+                                    concave_points_mean, area_worst]))
     print(pred)
     return render_template('index.html', predict=str(pred))
 
