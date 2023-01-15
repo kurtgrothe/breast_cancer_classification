@@ -27,7 +27,7 @@ jobs:
       - name: run_program
         run: python app.py
       - name: deploy to Heroku
-        uses: kurtgrothe/breast_cancer_classification@v1 # This is the action
+        uses: kurtgrothe/breast_cancer_classification # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "module2-kurtg" # From Heroku
