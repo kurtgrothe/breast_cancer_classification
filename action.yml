@@ -7,10 +7,10 @@ inputs:
   heroku_api_key:
     description: "This will be used for authentication. You can find it in your heroku homepage account settings"
     required: true
-  heroku_email:
+  heroku_email: "kurt.grothe@gmail.com"
     description: "Email that you use with heroku"
     required: true
-  heroku_app_name:
+  heroku_app_name: "module2-kurtg"
     description: "The appname to use for deploying/updating"
     required: true
   buildpack:
@@ -27,7 +27,7 @@ inputs:
   dontautocreate:
     description: "Set this to true if you don't want to automatically create the Heroku app"
     default: "false"
-    required: false
+    required: true
   usedocker:
     description: "Will deploy using Dockerfile in project root."
     default: "false"
@@ -86,6 +86,3 @@ inputs:
 outputs:
   status:
     description: "The Success/Failure of the action"
-runs:
-  using: "node12"
-  main: "index.js"
