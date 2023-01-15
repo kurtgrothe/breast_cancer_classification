@@ -22,7 +22,7 @@ def predict():
     area_worst = request.form['area_worst']
 
     pred = model.predict(np.array([[perimeter_worst,radius_worst,
-                                    concave_points_mean, area_worst]))
+                                    concave_points_mean, area_worst]]))
     print(pred)
     return render_template('index.html', predict=str(pred))
 
