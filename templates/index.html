@@ -16,15 +16,15 @@
         <input type="number" name="perimeter_worst" id="perimeter_worst" required>
 
         <label for="radius_worst">radius_worst:</label>
-        <input type="number" name="radius_worst" id="radius_worst" required>
+        <input type="number" min="0" max="5" name="radius_worst" id="radius_worst" required>
 
         <label for="concave_points_mean">concave_points_mean:</label>
-        <input type="number" name="concave_points_mean" id="concave_points_mean" required>
+        <input type="number" min="0" max="5" name="concave_points_mean" id="concave_points_mean" required>
 
         <label for="area_worst">area_worst:</label>
-        <input type="number" name="area_worst" id="area_worst" required>
+        <input type="number" min="0" max="5" name="area_worst" id="area_worst" required>
 
-        <input type="submit" value="Submit">
+        <input type="submit" min="0" max="5" value="Submit">
    </form>
    <p>{{ predict }}</p>
     <footer>
