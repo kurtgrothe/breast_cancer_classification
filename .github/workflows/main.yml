@@ -22,13 +22,13 @@ jobs:
           pip install --upgrade wheel
           pip install --upgrade setuptools
           pip install pyqt5
-          pip install flake8 
+          pip install flake8
           pip install -r requirements.txt
       - name: run_program
         run: python app.py
       - name: deploy to Heroku
         uses: kurtgrothe/breast_cancer_classification@v1 # This is the action
         with:
-          heroku_api_key: ${{secrets.6bdbf7a4-78ea-4c4b-9c42-97a0f0686901}}
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "module2-kurtg" # From Heroku
           heroku_email: "kurt.grothe@gmail.com"
