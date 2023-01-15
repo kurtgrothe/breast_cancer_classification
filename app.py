@@ -23,7 +23,10 @@ def predict():
 
     pred = model.predict(np.array([[perimeter_worst,radius_worst,
                                     concave_points_mean, area_worst]]))
-    print(pred)
+    if pred:
+        print ("No Cancer Found")
+    else:
+        print("Canncer Found")
     return render_template('index.html', predict=str(pred))
 
 
